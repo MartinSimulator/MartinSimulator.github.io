@@ -8,15 +8,15 @@ const pages = {
     },
     projects: {
         title: "Here is a portfolio of my projects",
-        body: "<p>projects will go here when I get to them hehe<p/>",
+        body: "<p>projects will go here when I get to them hehe</p>",
     },
     keyboards: {
         title: "Keyboards",
-        body: "<p>I started building keyboards in 2022. Here are some of my favorites<p/>",
+        body: "<p>I started building keyboards in 2022. Here are some of my favorites</p>",
     },
     cats: {
         title: "Meet Coco and Louis",
-        body: "<p>Louis is a goofball and Coco is tiny<p/>",
+        body: "<p>Louis is a goofball and Coco is tiny</p>",
     },
     contact: {
         title: "Contact",
