@@ -59,6 +59,7 @@ function renderPage(pageName: string): void {
   } else {
     app.innerHTML = "<h1>404</h1><p>Page not found.</p>";
   }
+  initializeCarousels();
 }
 
 // function to handle page navigation and url update
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
   // checks for change in hash to update page shown
   window.addEventListener("hashchange", () => {
     renderPage(window.location.hash);
@@ -102,3 +104,40 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPage("home");
   }
 });
+
+
+function initializeCarousels(): void {
+  // 1. Find all carousels on the currently rendered page
+  const carousels = document.querySelectorAll('.carousel-container');
+
+  // 2. Loop through each one
+  carousels.forEach((carousel) => {
+    const images = carousel.querySelectorAll('.carousel-slide img');
+    const prevBtn = carousel.querySelector('.prev-btn');
+    const nextBtn = carousel.querySelector('.next-btn');
+
+    // Ensure elements exist before using them
+    if (!prevBtn || !nextBtn || images.length === 0) return;
+
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+      // Remove active class from images INSIDE THIS CAROUSEL ONLY
+      images.forEach((img) => img.classList.remove('active'));
+      // Add active class to current image
+      images[index]?.classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex++;
+      if (currentIndex >= images.length) currentIndex = 0;
+      showImage(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex--;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      showImage(currentIndex);
+    });
+  });
+}
