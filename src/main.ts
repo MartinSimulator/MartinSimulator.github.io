@@ -6,6 +6,7 @@ interface PageContent {
 
 // Importing page body modules
 import { homeBody } from "./contents/home.js";
+import { projBody } from "./contents/projects.js";
 import { catsBody } from "./contents/cats.js";
 import { contactBody } from "./contents/contact.js";
 
@@ -16,8 +17,8 @@ const pages: Record<string, PageContent> = {
     body: homeBody,
   },
   projects: {
-    title: "Here is a portfolio of my projects",
-    body: "<p>projects will go here when I get to them hehe</p>",
+    title: "",
+    body: projBody,
   },
   keyboards: {
     title: "Keyboards",
@@ -41,7 +42,7 @@ function renderPage(pageName: string): void {
   // Check if app exists
   if (!app) return;
 
-  if (key === "cats") {
+  if (key === "cats" || key === "projects") {
     app.classList.add("transparent-mode");
   } else {
     app.classList.remove("transparent-mode");
