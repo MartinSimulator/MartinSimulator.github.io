@@ -1,0 +1,2 @@
+export declare const contactBody = "\n    <p>\n        Email: <a href=\"mailto:martin.simulator@gmail.com\">Martin.Simulator@gmail.com</a> \n\n        <br> \n        Github: <a href=\"https://github.com/MartinSimulator\" target=\"_blank\">MartinSimulator</a>\n        \n        <br>\n        LinkedIn: <a href=\"https://www.linkedin.com/in/martin-sim-b6a9b0321/\" target=\"_blank\">Martin Sim</a>\n    \n    </p>\n";
+//# sourceMappingURL=contact.d.ts.map

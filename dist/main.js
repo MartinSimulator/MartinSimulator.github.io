@@ -1,6 +1,7 @@
 // Importing page body modules
 import { homeBody } from "./contents/home.js";
 import { catsBody } from "./contents/cats.js";
+import { contactBody } from "./contents/contact.js";
 // Dictionary to hold page data
 const pages = {
     home: {
@@ -21,7 +22,7 @@ const pages = {
     },
     contact: {
         title: "Contact",
-        body: "<p>Email: martin.simulator@gmail.com <br> Github: https://github.com/MartinSimulator</p>",
+        body: contactBody,
     },
 };
 // Function to render content
