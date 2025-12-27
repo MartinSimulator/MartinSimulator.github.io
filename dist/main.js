@@ -17,7 +17,7 @@ const pages = {
         body: "<p>I started building keyboards in 2022. Here are some of my favorites</p>",
     },
     cats: {
-        title: "Meet Coco and Louis",
+        title: "",
         body: catsBody,
     },
     contact: {
@@ -29,16 +29,26 @@ const pages = {
 function renderPage(pageName) {
     const key = pageName.replace("#", "") || "home";
     const app = document.getElementById("app");
-    // Check if app exists AND if the page exists in our dictionary
-    if (app && pages[key]) {
+    // Check if app exists
+    if (!app)
+        return;
+    if (key === "cats") {
+        app.classList.add("transparent-mode");
+    }
+    else {
+        app.classList.remove("transparent-mode");
+    }
+    // Check if the page exists in our dictionary
+    if (pages[key]) {
         const content = pages[key];
+        const titleHTML = content.title ? `<h1>${content.title}</h1>` : "";
         app.innerHTML = `
-            <h1>${content.title}</h1>
+            ${titleHTML}
             <div>${content.body}</div>
         `;
         // Otherwise outputs page not found
     }
-    else if (app) {
+    else {
         app.innerHTML = "<h1>404</h1><p>Page not found.</p>";
     }
 }

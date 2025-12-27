@@ -1,5 +1,6 @@
 export const catsBody = `
     <div class="cat-card">
+        <h1>Meet Coco and Louis</h1>
         <img src="/public/cat-images/bothCats.png" alt="both cats img" class="cat-photo"/>
         <p>
             These fluffballs are my two year old Balinese cats. They're from the same litter of Balinese cats which we chose because of their hypoallergenic
