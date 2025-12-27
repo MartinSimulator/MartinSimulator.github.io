@@ -6,6 +6,7 @@ interface PageContent {
 
 // Importing page body modules
 import { homeBody } from "./contents/home.js";
+import { catsBody } from "./contents/cats.js";
 
 // Dictionary to hold page data
 const pages: Record<string, PageContent> = {
@@ -23,7 +24,7 @@ const pages: Record<string, PageContent> = {
   },
   cats: {
     title: "Meet Coco and Louis",
-    body: "<p>Louis is a goofball and Coco is tiny</p>",
+    body: catsBody,
   },
   contact: {
     title: "Contact",

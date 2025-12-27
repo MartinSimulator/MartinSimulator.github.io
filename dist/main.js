@@ -1,5 +1,6 @@
 // Importing page body modules
 import { homeBody } from "./contents/home.js";
+import { catsBody } from "./contents/cats.js";
 // Dictionary to hold page data
 const pages = {
     home: {
@@ -16,7 +17,7 @@ const pages = {
     },
     cats: {
         title: "Meet Coco and Louis",
-        body: "<p>Louis is a goofball and Coco is tiny</p>",
+        body: catsBody,
     },
     contact: {
         title: "Contact",

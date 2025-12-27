@@ -1,0 +1,2 @@
+export declare const catsBody = "\n    <img src=\"/public/cat-images/bothCats.png\" alt=\"both cats img\" class=\"bothcatsphoto\"/>\n    <p>\n        These two fluffballs are two year old balinese cats. They're from the same litter and we got balinese cats because of their hypoallergenic\n        properties (my dad and brother are allergic to most cats).\n    </p>\n\n\n";
+//# sourceMappingURL=cats.d.ts.map
