@@ -1,4 +1,5 @@
 export const projBody = `
+
     <div class="project-card">
         <h1>Projects</h1>
         <p>
@@ -7,25 +8,15 @@ export const projBody = `
     </div>
 
     <div class="project-card">
-        <h2>Custom Putter Head</h2>
+        <h2>Lifting Tracker App</h2>
         <p>
-            Inspired by the Scotty Cameron Newport 2, I decided it would be fun to try and CAD my own putter. Made entirely in Fusion360, this head sports a plumber's neck style hosel
-            and supports 0.370" shafts. It has a lie angle of 70° and a loft of 3°. I have never had this putter manufactured so if you want to make it, double check the measurements!
+            Recently, I've been rather interested in web development (hence this website lol) and I decided a good way to learn is to build a project. Despite having almost no knowledge of frontend or backend development, I
+            decided to build this lifting tracker which allows users to input workouts and receive a graph with previous lifts visualizing progress over time represented by volume (weight * total reps across three sets). This
+            way, users can track increases in weight and reps. If you want to check it out here is a <a href="https://www.youtube.com/watch?v=Np_IGvwd-m0" target="_blank">Live Demo.</a> Through this project I got to learn a lot
+            about the way the frontend and backend work and how they communicate to work together. For this app, I used React for the frontend, Node.js and Express for the backend, and MongoDB with Mongoose for data storage. 
         </p>
-        <a href="https://github.com/MartinSimulator/Custom-Putter-Head" target="_blank">Github Repo</a>
-
-        <div class="model-container">
-            <model-viewer 
-                src="/public/project-files/custom_putter_np2.glb" 
-                alt="A 3D model of the putter" 
-                auto-rotate 
-                camera-controls
-                shadow-intensity="1">
-            </model-viewer>
-        </div>
-
+        <a href="https://github.com/MartinSimulator/lifting-tracker" target="_blank">Github Repo</a>
     </div>
-
 
     <div class="project-card">
         <h2>Custom Keyboard Case & Plate</h2>
@@ -60,6 +51,26 @@ export const projBody = `
             </div>
             <button class="prev-btn">&#10094;</button>
             <button class="next-btn">&#10095;</button>
+        </div>
+
+    </div>
+
+    <div class="project-card">
+        <h2>Custom Putter Head</h2>
+        <p>
+            Inspired by the Scotty Cameron Newport 2, I decided it would be fun to try and CAD my own putter. Made entirely in Fusion360, this head sports a plumber's neck style hosel
+            and supports 0.370" shafts. It has a lie angle of 70° and a loft of 3°. I have never had this putter manufactured so if you want to make it, double check the measurements!
+        </p>
+        <a href="https://github.com/MartinSimulator/Custom-Putter-Head" target="_blank">Github Repo</a>
+
+        <div class="model-container">
+            <model-viewer 
+                src="/public/project-files/custom_putter_np2.glb" 
+                alt="A 3D model of the putter" 
+                auto-rotate 
+                camera-controls
+                shadow-intensity="1">
+            </model-viewer>
         </div>
 
     </div>
