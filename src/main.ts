@@ -7,6 +7,7 @@ interface PageContent {
 // Importing page body modules
 import { homeBody } from "./contents/home.js";
 import { projBody } from "./contents/projects.js";
+import { keyboardBody } from "./contents/keyboards.js";
 import { catsBody } from "./contents/cats.js";
 import { contactBody } from "./contents/contact.js";
 
@@ -21,8 +22,8 @@ const pages: Record<string, PageContent> = {
     body: projBody,
   },
   keyboards: {
-    title: "Keyboards",
-    body: "<p>I started building keyboards in 2022. Here are some of my favorites</p>",
+    title: "",
+    body: keyboardBody,
   },
   cats: {
     title: "",
@@ -42,7 +43,7 @@ function renderPage(pageName: string): void {
   // Check if app exists
   if (!app) return;
 
-  if (key === "cats" || key === "projects") {
+  if (key === "cats" || key === "projects" || key === "keyboards") {
     app.classList.add("transparent-mode");
   } else {
     app.classList.remove("transparent-mode");
@@ -85,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
   // checks for change in hash to update page shown
   window.addEventListener("hashchange", () => {
     renderPage(window.location.hash);
@@ -106,16 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 function initializeCarousels(): void {
   // 1. Find all carousels on the currently rendered page
-  const carousels = document.querySelectorAll('.carousel-container');
+  const carousels = document.querySelectorAll(".carousel-container");
 
   // 2. Loop through each one
   carousels.forEach((carousel) => {
-    const images = carousel.querySelectorAll('.carousel-slide img');
-    const prevBtn = carousel.querySelector('.prev-btn');
-    const nextBtn = carousel.querySelector('.next-btn');
+    const images = carousel.querySelectorAll(".carousel-slide img");
+    const prevBtn = carousel.querySelector(".prev-btn");
+    const nextBtn = carousel.querySelector(".next-btn");
 
     // Ensure elements exist before using them
     if (!prevBtn || !nextBtn || images.length === 0) return;
@@ -124,18 +123,18 @@ function initializeCarousels(): void {
 
     function showImage(index: number) {
       // Remove active class from images INSIDE THIS CAROUSEL ONLY
-      images.forEach((img) => img.classList.remove('active'));
+      images.forEach((img) => img.classList.remove("active"));
       // Add active class to current image
-      images[index]?.classList.add('active');
+      images[index]?.classList.add("active");
     }
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener("click", () => {
       currentIndex++;
       if (currentIndex >= images.length) currentIndex = 0;
       showImage(currentIndex);
     });
 
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener("click", () => {
       currentIndex--;
       if (currentIndex < 0) currentIndex = images.length - 1;
       showImage(currentIndex);

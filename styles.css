@@ -178,3 +178,11 @@ model-viewer {
   margin-bottom: 20px;
   text-align: left;
 }
+
+.keeb-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
