@@ -1,7 +1,7 @@
 export const homeBody = `
     <p>
-        I'm Martin, a first-year EECS major at UC Berkeley. My interests revolve around both hardware design and software developement.
-        Recently, I'm most interested in learning frontend development tools.
+        I'm Martin, a sophomore EECS major at UC Berkeley. My interests revolve around software development, computer hardware, and machine learning.
+        Right now, I'm interning as a Software Engineer at Optima building backend systems.
     </p>
     <p>
         I have experience designing mechanical keyboards from the ground up using CAD, documenting technical processes, and working on projects that require iterative design.
