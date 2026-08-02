@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import profilePhoto from '../assets/profile-photo.png'
+import { Timeline } from './components/Timeline'
+import { experiences } from './data/experiences'
 
 // sections of the page
 const sections = [
@@ -90,6 +92,9 @@ function App() {
         {sections.map(({ id, label }) => (
           <section key={id} id={id} className="content-section">
             <h2>{label}</h2>
+            {id === 'work-experience' && (
+              <Timeline experiences={experiences} />
+            )}
           </section>
         ))}
       </main>
