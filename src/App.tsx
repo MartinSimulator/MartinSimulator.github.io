@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef } from 'react'
 import profilePhoto from '../assets/profile-photo.png'
+import { ProjectGrid } from './components/ProjectGrid'
 import { Timeline } from './components/Timeline'
 import { experiences } from './data/experiences'
+import { projects } from './data/projects'
 
 // sections of the page
 const sections = [
@@ -95,6 +97,7 @@ function App() {
             {id === 'work-experience' && (
               <Timeline experiences={experiences} />
             )}
+            {id === 'projects' && <ProjectGrid projects={projects} />}
           </section>
         ))}
       </main>

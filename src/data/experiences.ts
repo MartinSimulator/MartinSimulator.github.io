@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     logo: ucBerkeleySeal,
     logoText: 'Cal',
     description:
-      'Undergraduate student in Electrical Engineering and Computer Science.',
+      "I was accepted into UC Berkeley as an undergraduate EECS major starting in Fall 2025. Go Bears!",
     links: [{ label: 'EECS', href: 'https://eecs.berkeley.edu/' }],
   },
   {
@@ -46,8 +46,8 @@ export const experiences: Experience[] = [
     side: 'above',
     logo: asucLogo,
     logoText: 'ASUC',
-    description: 'Joined the ASUC OCTO Web Development Team as a Software Engineer.',
-    links: [{ label: 'ASUC', href: 'https://octo.asuc.org/' }],
+    description: 'I joined the ASUC OCTO (Office of the CTO) Web Dev Team as a Software Engineer.',
+    links: [{ label: 'ASUC OCTO', href: 'https://octo.asuc.org/' }],
   },
   {
     id: 'berkeley-lab',
@@ -58,8 +58,8 @@ export const experiences: Experience[] = [
     side: 'below',
     logo: berkeleyLabLogo,
     logoText: 'LBNL',
-    description: 'Joined the ENIGMA group at LBNL to develop a data visualization tool for biology researchers.',
-    links: [{ label: 'Berkeley Lab', href: 'https://www.lbl.gov/' }],
+    description: 'I joined the ENIGMA Science Focus Area at LBNL to develop a data visualization tool for biology researchers.',
+    links: [{ label: 'ENIGMA', href: 'https://www.genomicscience.energy.gov/lbnl/' }],
   },
   {
     id: 'optima',
@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
     logo: optimaLogo,
     logoText: 'Optima',
     description:
-      'Building backend services for Optima, a SkyDeck startup focused on healthcare.',
-    links: [{ label: 'Company', href: '#' }],
+      'I interned at Optima, a SkyDeck backed startup. I built backend services for an insurance claims processing system.',
+    links: [{ label: 'Optima Website', href: 'https://optimacorp.org/' }],
   },
 ]
