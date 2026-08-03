@@ -55,11 +55,19 @@
 
 .project-card-label {
   padding: 0.55rem 0.65rem 0.3rem;
-  font-family: Newsreader, Georgia, serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.2;
   color: var(--project-ink);
+}
+
+.project-card-bridge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.7rem;
 }
 
 .project-card-detail {
@@ -96,7 +104,7 @@
 
 .project-card-title {
   margin: 0;
-  font-family: Newsreader, Georgia, serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.25;
@@ -147,4 +155,68 @@
 .project-card-demo a:hover,
 .project-card-demo a:focus-visible {
   color: var(--project-muted);
+}
+
+.project-card-tools {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--project-border);
+}
+
+.project-card-tools-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--project-muted);
+}
+
+.project-card-tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.7rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--project-border);
+  border-radius: 4px;
+  background: #f3efe6;
+  color: var(--project-ink);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.project-tool:hover,
+.project-tool:focus-visible {
+  border-color: #a89f90;
+  background: var(--project-surface);
+  color: var(--project-muted);
+  outline: none;
+}
+
+.project-tool-logo {
+  display: block;
+  width: 1rem;
+  height: 1.1rem;
+  object-fit: contain;
+}
+
+.project-tool-fallback {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
 }

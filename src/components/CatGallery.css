@@ -45,7 +45,7 @@
 .cat-carousel-image-button img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 15;
   object-fit: cover;
   transition: transform 220ms ease;
 }
@@ -105,7 +105,7 @@
 }
 
 .cat-carousel-name {
-  font-family: Newsreader, Georgia, serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -171,7 +171,7 @@
   border-radius: 4px;
   background: var(--cat-surface);
   color: var(--cat-ink);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;

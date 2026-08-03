@@ -100,7 +100,7 @@
 }
 
 .timeline-logo--text {
-  font-family: Newsreader, Georgia, serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -169,7 +169,7 @@
 
 .timeline-bubble-role {
   margin: 0;
-  font-family: Newsreader, Georgia, serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.25;

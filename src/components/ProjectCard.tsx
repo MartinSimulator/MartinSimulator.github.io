@@ -23,6 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     websiteUrl,
     demoVideoUrl,
     links,
+    tools,
   } = project
 
   const hasDetail =
@@ -31,7 +32,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
     Boolean(githubUrl) ||
     Boolean(websiteUrl) ||
     Boolean(demoVideoUrl) ||
-    Boolean(links && links.length > 0)
+    Boolean(links && links.length > 0) ||
+    Boolean(tools && tools.length > 0)
 
   return (
     <article
@@ -58,6 +60,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
         {label && <span className="project-card-label">{label}</span>}
       </button>
+
+      {hasDetail && <div className="project-card-bridge" aria-hidden="true" />}
 
       {hasDetail && (
         <div
@@ -111,6 +115,38 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </li>
               ))}
             </ul>
+          )}
+
+          {tools && tools.length > 0 && (
+            <div className="project-card-tools">
+              <p className="project-card-tools-label">Tools</p>
+              <ul className="project-card-tools-list">
+                {tools.map((tool) => (
+                  <li key={tool.id}>
+                    <a
+                      className="project-tool"
+                      href={tool.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={tool.name}
+                      aria-label={tool.name}
+                    >
+                      {tool.logo ? (
+                        <img
+                          className="project-tool-logo"
+                          src={tool.logo}
+                          alt=""
+                        />
+                      ) : (
+                        <span className="project-tool-fallback">
+                          {tool.name}
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       )}
