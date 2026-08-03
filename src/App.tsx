@@ -1,18 +1,19 @@
 import { useLayoutEffect, useRef } from 'react'
 import profilePhoto from '../assets/profile-photo.png'
 import { CatGallery } from './components/CatGallery'
+import { ContactList } from './components/ContactList'
 import { ProjectGrid } from './components/ProjectGrid'
 import { Timeline } from './components/Timeline'
 import { cats, catsIntro } from './data/cats'
+import { contactLinks } from './data/contact'
 import { experiences } from './data/experiences'
 import { projects } from './data/projects'
 
 // sections of the page
 const sections = [
-  { id: 'work-experience', label: 'Work Experience' },
+  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'cats', label: 'Cats' },
-  { id: 'keyboards', label: 'Keyboards' },
   { id: 'contact', label: 'Contact' },
 ] as const // as const to make the array immutable
 
@@ -96,11 +97,12 @@ function App() {
         {sections.map(({ id, label }) => (
           <section key={id} id={id} className="content-section">
             <h2>{label}</h2>
-            {id === 'work-experience' && (
+            {id === 'experience' && (
               <Timeline experiences={experiences} />
             )}
             {id === 'projects' && <ProjectGrid projects={projects} />}
             {id === 'cats' && <CatGallery cats={cats} intro={catsIntro} />}
+            {id === 'contact' && <ContactList links={contactLinks} />}
           </section>
         ))}
       </main>

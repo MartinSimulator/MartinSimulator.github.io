@@ -1,0 +1,68 @@
+.contact-list {
+  --contact-ink: #1c1a17;
+  --contact-muted: #5c564c;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list-item {
+  margin: 0;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--contact-ink);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--contact-muted);
+  outline: none;
+}
+
+.contact-link:hover .contact-label,
+.contact-link:focus-visible .contact-label {
+  border-bottom-color: var(--contact-muted);
+}
+
+.contact-logo-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1.15rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  /* Optical alignment with text metrics (mail logo baseline) */
+  transform: translateY(-0.06em);
+}
+
+.contact-link--linkedin .contact-logo-slot,
+.contact-link--github .contact-logo-slot,
+.contact-link--resume .contact-logo-slot {
+  transform: translateY(-0.14em);
+}
+
+.contact-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-label {
+  border-bottom: 1px solid transparent;
+  line-height: 1.2;
+  transition: border-color 160ms ease;
+}

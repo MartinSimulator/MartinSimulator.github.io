@@ -51,7 +51,7 @@ export function Timeline({ experiences }: TimelineProps) {
   }
 
   return (
-    <div className="timeline" role="list" aria-label="Work experience timeline">
+    <div className="timeline" role="list" aria-label="Experience timeline">
       <div className="timeline-track" aria-hidden="true" />
 
       {sorted.map((experience) => {
