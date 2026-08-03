@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef } from 'react'
 import profilePhoto from '../assets/profile-photo.png'
+import { CatGallery } from './components/CatGallery'
 import { ProjectGrid } from './components/ProjectGrid'
 import { Timeline } from './components/Timeline'
+import { cats, catsIntro } from './data/cats'
 import { experiences } from './data/experiences'
 import { projects } from './data/projects'
 
@@ -98,6 +100,7 @@ function App() {
               <Timeline experiences={experiences} />
             )}
             {id === 'projects' && <ProjectGrid projects={projects} />}
+            {id === 'cats' && <CatGallery cats={cats} intro={catsIntro} />}
           </section>
         ))}
       </main>

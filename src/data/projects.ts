@@ -26,6 +26,8 @@ export const projects: Project[] = [
     label: 'Lifting Tracker',
     image: liftTrackerImage,
     description: 'This is a web-based app I built to track my weightlifting progress over time. It allows me to log my lifts and view my progress via graphs and tables.',
+    githubUrl: 'https://github.com/MartinSimulator/lifting-tracker',
+    demoVideoUrl: 'https://www.youtube.com/watch?v=Np_IGvwd-m0', 
   },
   {
     id: 'emg-viz',
@@ -33,5 +35,6 @@ export const projects: Project[] = [
     label: 'sEMG RIR Detector',
     image: emgVizImage,
     description: 'This is a project I am currently working on. My goal is to create a machine learning model that can detect reps in reserve during a lift in real-time using surface EMG.',
+    githubUrl: 'https://github.com/MartinSimulator/muscle-activation',
   },
 ]
