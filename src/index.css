@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1c1a17;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #e8e2d6 0%, transparent 55%),
+    linear-gradient(180deg, #f7f4ee 0%, #ebe6dc 100%);
+}
+
+.page {
+  width: min(40rem, 100% - 2rem);
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.name {
+  margin: 0;
+  width: 100%;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  width: 75%;
+  margin-inline: auto;
+}
+
+.nav a {
+  color: #3d3830;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: #1c1a17;
+  border-bottom-color: #1c1a17;
+  outline: none;
+}
+
+.profile-photo {
+  display: block;
+  width: min(14rem, 70%);
+  height: auto;
+  margin: 2.5rem auto 0;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.about {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.about p {
+  margin: 0;
+}
+
+.content-section {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  scroll-margin-top: 1.5rem;
+  text-align: left;
+}
+
+.content-section h2 {
+  margin: 0;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 40rem) {
+  .name {
+    white-space: normal;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .nav {
+    justify-content: center;
+  }
+}

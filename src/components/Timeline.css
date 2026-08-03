@@ -1,0 +1,223 @@
+.timeline {
+  --timeline-line: #8a8174;
+  --timeline-ink: #1c1a17;
+  --timeline-muted: #5c564c;
+  --timeline-surface: #faf8f3;
+  --timeline-border: #cfc6b8;
+
+  position: relative;
+  width: 100%;
+  min-height: 16rem;
+  margin-top: 2.5rem;
+  padding: 5.5rem 1.25rem 5.5rem;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--timeline-line) 4%,
+    var(--timeline-line) 96%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+}
+
+.timeline-item {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.timeline-item:hover,
+.timeline-item:focus-within {
+  z-index: 3;
+}
+
+.timeline-stem {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 2.25rem;
+  background: var(--timeline-line);
+  transform: translateX(-50%);
+}
+
+.timeline-item--above .timeline-stem {
+  bottom: 50%;
+}
+
+.timeline-item--below .timeline-stem {
+  top: 50%;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+
+.timeline-item--above .timeline-marker {
+  bottom: calc(50% + 2.25rem);
+}
+
+.timeline-item--below .timeline-marker {
+  top: calc(50% + 2.25rem);
+}
+
+.timeline-logo {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--timeline-border);
+  border-radius: 999px;
+  background: var(--timeline-surface);
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgb(28 26 23 / 8%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.timeline-logo--text {
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--timeline-ink);
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--timeline-muted);
+  white-space: nowrap;
+}
+
+.timeline-item--above .timeline-date {
+  order: -1;
+}
+
+.timeline-marker:hover .timeline-logo,
+.timeline-marker:focus-visible .timeline-logo,
+.timeline-item:focus-within .timeline-logo {
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgb(28 26 23 / 12%);
+}
+
+.timeline-marker:focus-visible {
+  outline: none;
+}
+
+.timeline-bubble {
+  position: absolute;
+  left: 50%;
+  width: min(16rem, 70vw);
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--timeline-border);
+  border-radius: 10px;
+  background: var(--timeline-surface);
+  color: var(--timeline-ink);
+  text-align: left;
+  box-shadow: 0 8px 24px rgb(28 26 23 / 12%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 0.35rem) scale(0.96);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+.timeline-item--above .timeline-bubble {
+  bottom: calc(50% + 5.75rem);
+}
+
+.timeline-item--below .timeline-bubble {
+  top: calc(50% + 5.75rem);
+}
+
+.timeline-item:hover .timeline-bubble,
+.timeline-item:focus-within .timeline-bubble {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.timeline-bubble-role {
+  margin: 0;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.timeline-bubble-company {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--timeline-muted);
+}
+
+.timeline-bubble-description {
+  margin: 0.65rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.timeline-bubble-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-bubble-links a {
+  color: var(--timeline-ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.timeline-bubble-links a:hover,
+.timeline-bubble-links a:focus-visible {
+  color: var(--timeline-muted);
+}
+
+@media (max-width: 40rem) {
+  .timeline {
+    min-height: 18rem;
+    padding-inline: 0.5rem;
+    overflow-x: auto;
+  }
+
+  .timeline-bubble {
+    width: min(14rem, 78vw);
+  }
+}

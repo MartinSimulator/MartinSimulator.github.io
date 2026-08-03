@@ -1,0 +1,222 @@
+.project-card {
+  --project-ink: #1c1a17;
+  --project-muted: #5c564c;
+  --project-surface: #faf8f3;
+  --project-border: #cfc6b8;
+
+  position: relative;
+  z-index: 1;
+}
+
+.project-card:hover,
+.project-card:focus-within,
+.project-card.is-open {
+  z-index: 2;
+}
+
+.project-card-face {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 2px solid var(--project-border);
+  border-radius: 6px;
+  background: var(--project-surface);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.project-card-face:hover,
+.project-card-face:focus-visible,
+.project-card.is-open .project-card-face {
+  border-color: #a89f90;
+  box-shadow: 0 4px 14px rgb(28 26 23 / 10%);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.project-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #e8e2d6;
+}
+
+.project-card-image--empty {
+  min-height: 0;
+}
+
+.project-card-label {
+  padding: 0.55rem 0.65rem 0.3rem;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--project-ink);
+}
+
+.project-card-bridge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.7rem;
+}
+
+.project-card-detail {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.55rem);
+  width: max(100%, 14rem);
+  max-width: min(18rem, 80vw);
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--project-border);
+  border-radius: 10px;
+  background: var(--project-surface);
+  color: var(--project-ink);
+  text-align: left;
+  box-shadow: 0 8px 24px rgb(28 26 23 / 12%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 0.35rem) scale(0.96);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
+}
+
+.project-card:hover .project-card-detail,
+.project-card:focus-within .project-card-detail,
+.project-card.is-open .project-card-detail {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.project-card-title {
+  margin: 0;
+  font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.project-card-description {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--project-ink);
+}
+
+.project-card-demo {
+  margin-top: 0.75rem;
+}
+
+.project-card-video {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  background: #1c1a17;
+}
+
+.project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card-links:empty {
+  display: none;
+}
+
+.project-card-links a,
+.project-card-demo a {
+  color: var(--project-ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.project-card-links a:hover,
+.project-card-links a:focus-visible,
+.project-card-demo a:hover,
+.project-card-demo a:focus-visible {
+  color: var(--project-muted);
+}
+
+.project-card-tools {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--project-border);
+}
+
+.project-card-tools-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--project-muted);
+}
+
+.project-card-tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.7rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--project-border);
+  border-radius: 4px;
+  background: #f3efe6;
+  color: var(--project-ink);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.project-tool:hover,
+.project-tool:focus-visible {
+  border-color: #a89f90;
+  background: var(--project-surface);
+  color: var(--project-muted);
+  outline: none;
+}
+
+.project-tool-logo {
+  display: block;
+  width: 1rem;
+  height: 1.1rem;
+  object-fit: contain;
+}
+
+.project-tool-fallback {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
